@@ -15,7 +15,7 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/login.css" />
   </head>
   <body>
 
@@ -41,20 +41,18 @@
 
       <div class="box-login">
         <h2>Login</h2>
-        <form>
           <div class="input-group">
-            <label for="user">Usuário:</label>
-            <input type="text" name="user" id="username" required />
+            <!-- <label for="user">Usuário:</label> <br> -->
+            <input type="text" name="user" id="username" required placeholder="Usuário"/>
           </div>
           <div class="input-group">
-            <label for="password">Senha:</label>
-            <input type="password" name="password" id="password" required place/>
+            <!-- <label for="password">Senha:</label> <br> -->
+            <input type="password" name="password" id="password" required placeholder="Senha"/>
           </div>
           <div class="send">
             <button onclick="login()">Entrar</button>
             <div class="message" id="message"></div>
           </div>
-        </form>
       </div>
     </div>
 
@@ -63,6 +61,6 @@
       <p>&copy; 2024 Pedro & Taís. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="./JS/script.js"></script>
+    <script src="./JS/login.js"></script>
   </body>
 </html>

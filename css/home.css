@@ -1,0 +1,177 @@
+/* Fonte e Reset */
+* {
+  /* font-family: 'Roboto', Arial, Helvetica, sans-serif; */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom, #740000, #3b0000); /* Gradiente para dar profundidade */
+  color: #fff;
+  overflow-x: hidden;
+}
+
+header h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  color: #fff;
+}
+
+p {
+  font-family: 'Dancing Script';
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 18px 0 20px 0;
+}
+
+.div-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #ff0000, #740000);
+  color: #fff;
+  padding: 20px 0;
+  max-height: 20vh;
+}
+
+.div-header img {
+  border-radius: 50%;
+  width: 150px;
+  height: auto;
+  margin-bottom: 9px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.div-header img:hover {
+  transform: scale(1.3);
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6); /* Efeito de brilho ao passar o mouse */
+}
+
+.box-title {
+  padding: 10px 20px;
+  background: rgba(255, 0, 0, 0.6);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 0px 24px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: 'Dancing Script', cursive; /* Fonte para o título */
+  filter: blur(10px);
+  transition: filter 0.8s ease, opacity 0.8s ease;
+  opacity: 0.3;
+}
+
+.separator {
+  width: 80%;
+  margin: 0 auto 20px auto;
+  border: none;
+  border-top: 1px solid #fff;
+  opacity: 0.5;
+}
+
+/* Galeria de Fotos */
+.galeria {
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 20px;
+  gap: 20px;
+  filter: blur(10px);
+  transition: filter 0.8s ease, opacity 0.8s ease;
+  opacity: 0.3;
+}
+
+.galeria.visible {
+  filter: blur(0);
+  opacity: 1;
+}
+
+.box-title.visible {
+  filter: blur(0);
+  opacity: 1;
+}
+
+/* Estilo das Polaroids */
+.polaroid {
+  width: 200px;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin: 20px;
+  display: inline-block;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid img {
+  width: 100%;
+  border-bottom: 5px solid #ff4e50; /* Borda colorida nas imagens */
+  border-radius: 10px 10px 0 0;
+}
+
+.polaroid:hover {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.caption {
+  font-size: 0.9rem;
+  color: #333;
+  padding-top: 10px;
+}
+
+/* Adicionando animação ao título */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header h1 {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Suavidade para a transição de visibilidade */
+.galeria, .box-title {
+  transition: opacity 1s ease, filter 1s ease;
+}
+
+.galeria.visible .polaroid {
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .polaroid {
+    width: 150px;
+  }
+  
+  .div-header img {
+    width: 100px;
+  }
+
+  .separator {
+    width: 90%;
+  }
+}
+
